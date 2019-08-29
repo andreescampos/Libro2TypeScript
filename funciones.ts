@@ -27,7 +27,7 @@ console.log(padLeft("hello", "aaa"));	//	Ejemplo	de	función	con	texto	->	Funcio
 console.log(padLeft("hello", 5));	//	Ejemplo	de	función	con	número	->	Funciona
 //console.log(padLeft("hello", true));		Ejemplo	de	función	con	texto	->	NO	FUNCIONA(no	compila)
 
-
+/*
 //	Compiled	with	--strictNullChecks
 function validateEntity(e: Entity?) {
     //	Throw	exception	if	e	is	null	or	invalid	entity
@@ -37,3 +37,13 @@ function processEntity(e: Entity?) {
     let s = e!.name;		//	Assert	that	e	is	non-null	and	access	name
 }
 
+*/
+
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+y = x;	//	OK
+//x = y;	Error
+let xx = () => ({ name: 'Alice' });
+let yy = () => ({ name: 'Alice', location: 'Seattle' });
+xx = yy;	//	OK
+//yy = xx;	Error	porque	x()nmo	tiene	la	propiedad	location

@@ -21,11 +21,22 @@ function padLeft(value, padding) {
 console.log(padLeft("hello", "aaa")); //	Ejemplo	de	función	con	texto	->	Funciona
 console.log(padLeft("hello", 5)); //	Ejemplo	de	función	con	número	->	Funciona
 //console.log(padLeft("hello", true));		Ejemplo	de	función	con	texto	->	NO	FUNCIONA(no	compila)
+/*
 //	Compiled	with	--strictNullChecks
-function validateEntity(e) {
+function validateEntity(e: Entity?) {
     //	Throw	exception	if	e	is	null	or	invalid	entity
 }
-function processEntity(e) {
+function processEntity(e: Entity?) {
     validateEntity(e);
-    var s = e.name; //	Assert	that	e	is	non-null	and	access	name
+    let s = e!.name;		//	Assert	that	e	is	non-null	and	access	name
 }
+
+*/
+var x = function (a) { return 0; };
+var y = function (b, s) { return 0; };
+y = x; //	OK
+//x = y;	Error
+var xx = function () { return ({ name: 'Alice' }); };
+var yy = function () { return ({ name: 'Alice', location: 'Seattle' }); };
+xx = yy; //	OK
+//yy = xx;	Error	porque	x()nmo	tiene	la	propiedad	location
