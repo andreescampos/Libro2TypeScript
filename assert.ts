@@ -21,12 +21,12 @@ function getAnimal(): Fish | Pajaro {
     var a: Fish = new Fish();
     return a;
 }
-let pet = getAnimal();
+let mascota = getAnimal();
 console.log(getAnimal());
-pet.ponerHuevos();
+mascota.ponerHuevos();
 //	ASERCIÓN
-if ((<Fish>pet).nadar) {
-    (<Fish>pet).nadar();
-} else if ((<Pajaro>pet).volar) {
-    (<Pajaro>pet).volar();
+if ((<Fish>mascota).nadar) {
+    (<Fish>mascota).nadar();
+} else if ((<Pajaro>mascota).volar) {
+    (<Pajaro>mascota).volar();
 }
