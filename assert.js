@@ -9,29 +9,29 @@ var Pajaro = /** @class */ (function () {
     };
     return Pajaro;
 }());
-var Fish = /** @class */ (function () {
-    function Fish() {
+var Pez = /** @class */ (function () {
+    function Pez() {
         //	Solo	para	el	ejemplo
     }
-    Fish.prototype.nadar = function () {
+    Pez.prototype.nadar = function () {
         console.log("PEZ");
     };
-    Fish.prototype.ponerHuevos = function () {
+    Pez.prototype.ponerHuevos = function () {
         console.log("Pone huevos");
     };
-    return Fish;
+    return Pez;
 }());
 function getAnimal() {
-    var a = new Fish();
+    var a = new Pez();
     return a;
 }
-var pet = getAnimal();
+var mascota = getAnimal();
 console.log(getAnimal());
-pet.ponerHuevos();
+mascota.ponerHuevos();
 //	ASERCIÓN
-if (pet.nadar) {
-    pet.nadar();
+if (mascota.nadar) {
+    mascota.nadar();
 }
-else if (pet.volar) {
-    pet.volar();
+else if (mascota.volar) {
+    mascota.volar();
 }
