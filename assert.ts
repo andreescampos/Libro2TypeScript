@@ -6,7 +6,7 @@ class Pajaro {
         console.log("Pone huevos");
     }
 }
-class Fish {
+class Pez {
     constructor() {
         //	Solo	para	el	ejemplo
     }
@@ -17,16 +17,16 @@ class Fish {
         console.log("Pone huevos");
     }
 }
-function getAnimal(): Fish | Pajaro {
-    var a: Fish = new Fish();
+function getAnimal(): Pez | Pajaro {
+    var a: Pez = new Pez();
     return a;
 }
 let mascota = getAnimal();
 console.log(getAnimal());
 mascota.ponerHuevos();
 //	ASERCIÓN
-if ((<Fish>mascota).nadar) {
-    (<Fish>mascota).nadar();
+if ((<Pez>mascota).nadar) {
+    (<Pez>mascota).nadar();
 } else if ((<Pajaro>mascota).volar) {
     (<Pajaro>mascota).volar();
 }

@@ -1,13 +1,13 @@
-interface Bird {
+interface Pajaro {
     volar();
     ponerHuevos();	//	Los	2	pueden
 }
-interface Fish {
+interface Pez {
     nadar();
     ponerHuevos();	//	Los	2	pueden
 }
-function getAnimal(): Fish | Bird {
-    var a: Fish;
+function getAnimal(): Pez | Pajaro {
+    var a: Pez;
     return a;
 }
 let mascota = getAnimal();
