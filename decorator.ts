@@ -32,6 +32,23 @@ myClass.myMethod();
 myClass.myMethod2(1, false);
 // ---------- COMO SE USAN LOS DECORADORES
 // type ClassDecorator = <TFunction extends Function>(target: TFunction): TFunction |void;
-    // type MethodDecorator = <T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void;
+// type MethodDecorator = <T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void;
 // type PropertyDecorator = (target: Object, propertyKey: string | symbol): void;
 // type ParameterDecorator = (target: Object, propertyKey: string | symbol, parameterIndex: number): void;
+
+function ClassDecoratorParams(param1: number, param2: string) {
+    return function (
+        target: Function // The class the decorator is declared on
+    ) {
+        console.log("ClassDecoratorParams(" + param1 + ", '" + param2 + "') called on:", target);
+    }
+}
+@ClassDecoratorParams(1, "a")
+@ClassDecoratorParams(2, "b")
+class ClassDecoratorParamsExample {
+}
+
+ClassDecoratorParams(2, 'b') called on: function ClassDecoratorParamsExample() {
+}
+ClassDecoratorParams(1, 'a') called on: function ClassDecoratorParamsExample() {
+}
