@@ -49,6 +49,7 @@ myClass.myMethod2(1, false);
 // type MethodDecorator = <T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void;
 // type PropertyDecorator = (target: Object, propertyKey: string | symbol): void;
 // type ParameterDecorator = (target: Object, propertyKey: string | symbol, parameterIndex: number): void;
+//Class decorator
 function ClassDecoratorParams(param1, param2) {
     return function (target // The class the decorator is declared on
     ) {
@@ -72,3 +73,21 @@ ClassDecoratorParams(1, 'a');
 called;
 on: function ClassDecoratorParamsExample() {
 }
+//Property Decorator
+function PropertyDecorator(target, // The prototype of the class
+propertyKey // The name of the property
+) {
+    console.log("PropertyDecorator called on: ", target, propertyKey);
+}
+var PropertyDecoratorExample = /** @class */ (function () {
+    function PropertyDecoratorExample() {
+    }
+    __decorate([
+        PropertyDecorator
+    ], PropertyDecoratorExample.prototype, "name");
+    return PropertyDecoratorExample;
+}());
+PropertyDecorator;
+called;
+on: { }
+name;

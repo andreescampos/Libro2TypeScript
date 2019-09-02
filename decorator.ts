@@ -36,6 +36,7 @@ myClass.myMethod2(1, false);
 // type PropertyDecorator = (target: Object, propertyKey: string | symbol): void;
 // type ParameterDecorator = (target: Object, propertyKey: string | symbol, parameterIndex: number): void;
 
+//Class decorator
 function ClassDecoratorParams(param1: number, param2: string) {
     return function (
         target: Function // The class the decorator is declared on
@@ -52,3 +53,18 @@ ClassDecoratorParams(2, 'b') called on: function ClassDecoratorParamsExample() {
 }
 ClassDecoratorParams(1, 'a') called on: function ClassDecoratorParamsExample() {
 }
+
+
+//Property Decorator
+function PropertyDecorator(
+    target: Object, // The prototype of the class
+    propertyKey: string | symbol // The name of the property
+) {
+    console.log("PropertyDecorator called on: ", target, propertyKey);
+}
+class PropertyDecoratorExample {
+    @PropertyDecorator
+    name: string;
+}
+PropertyDecorator called on:
+{ } name
