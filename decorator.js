@@ -91,3 +91,34 @@ PropertyDecorator;
 called;
 on: { }
 name;
+//Method Decorator
+function MethodDecorator(target, // The prototype of the class
+propertyKey, // The name of the method
+descriptor) {
+    console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
+}
+var MethodDecoratorExample = /** @class */ (function () {
+    function MethodDecoratorExample() {
+    }
+    MethodDecoratorExample.prototype.method = function () {
+    };
+    __decorate([
+        MethodDecorator
+    ], MethodDecoratorExample.prototype, "method");
+    return MethodDecoratorExample;
+}());
+MethodDecorator;
+called;
+on: {
+    method: [Function];
+}
+method;
+{
+    value: [Function],
+        writable;
+    true,
+        enumerable;
+    true,
+        configurable;
+    true;
+}

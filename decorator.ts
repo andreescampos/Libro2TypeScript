@@ -66,5 +66,26 @@ class PropertyDecoratorExample {
     @PropertyDecorator
     name: string;
 }
-PropertyDecorator called on:
-{ } name
+PropertyDecorator called on: { } name
+
+
+//Method Decorator
+function MethodDecorator(
+    target: Object, // The prototype of the class
+    propertyKey: string, // The name of the method
+    descriptor: TypedPropertyDescriptor<any>
+) {
+    console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
+}
+class MethodDecoratorExample {
+    @MethodDecorator
+    method() {
+    }
+}
+MethodDecorator called on: { method: [Function] } method {
+    value: [Function],
+        writable: true,
+        enumerable: true,
+        configurable: true
+}
+
