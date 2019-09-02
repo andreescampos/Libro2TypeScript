@@ -142,3 +142,34 @@ StaticMethodDecorator;
 called;
 on: function StaticMethodDecoratorExample() {
 }
+//Parameter Decorator
+function ParameterDecorator(target, // The prototype of the class
+propertyKey, // The name of the method
+parameterIndex // The index of parameter in the list of the function's parameters
+) {
+    console.log("ParameterDecorator called on: ", target, propertyKey, parameterIndex);
+}
+var ParameterDecoratorExample = /** @class */ (function () {
+    function ParameterDecoratorExample() {
+    }
+    ParameterDecoratorExample.prototype.method = function (param1, param2) {
+    };
+    __decorate([
+        __param(0, ParameterDecorator), __param(1, ParameterDecorator)
+    ], ParameterDecoratorExample.prototype, "method");
+    return ParameterDecoratorExample;
+}());
+ParameterDecorator;
+called;
+on: {
+    method: [Function];
+}
+method;
+1;
+ParameterDecorator;
+called;
+on: {
+    method: [Function];
+}
+method;
+0;
