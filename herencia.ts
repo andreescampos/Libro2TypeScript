@@ -34,3 +34,17 @@ let ej2 = {
         new Elephant("Elefanton")
 };
 console.log(array);
+
+class clase_prueba {
+    constructor() {
+
+    }
+
+    function e(x: number);
+    function e(x: String) { }
+    function e(x: boolean) { }
+    function e(x: Array<number>) { }
+    function e(x) {
+    // implementación de la función
+}
+}
