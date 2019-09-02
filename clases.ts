@@ -87,3 +87,24 @@ class Something {
 var s1 = new Something();
 var s2 = new Something();
 console.log(Something.instances); // 2
+
+
+class FooBase {
+    public l: number;
+    private m: number;
+    protected n: number;
+}
+// EFECTOS EN UNA INSTANCIA
+var foo = new FooBase();
+foo.l; // OK
+foo.m; // ERROR : private
+foo.n; // ERROR : protected
+// EFECTOS EN UNA CLASE HIJA
+class FooChild extends FooBase {
+    constructor() {
+        super();
+        this.l; // OK
+        this.m; // ERROR: private
+        this.n; // okay
+    }
+}
